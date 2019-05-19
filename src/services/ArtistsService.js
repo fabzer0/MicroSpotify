@@ -4,14 +4,7 @@ const { Artist, Album } = models;
 
 class ArtistsService {
   static async getArtists() {
-    const artists = await Artist.findAll(
-      { 
-        include: [{
-          model: Album,
-          as: 'albums'
-        }],
-      },    
-    );
+    const artists = await Artist.findAll();
     
     return artists;
   }

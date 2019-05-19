@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Album.associate = (models) => {
-    Album.hasMany(models.Playlist, { foreignKey: 'albumId', as: 'playlists' } );
+    Album.hasMany(models.Playlist, { foreignKey: 'albumId', as: 'songs' } );
     Album.belongsTo(models.Artist, { foreignKey: 'ownerId', onDelete: 'CASCADE' } );
   };
 
