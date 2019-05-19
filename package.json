@@ -4,17 +4,20 @@
   "description": "This is a music streaming application",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon ./bin/www",
+    "start:dev": "nodemon ./bin/start",
     "db:seed": "sequelize db:seed:all",
     "db:migrate": "sequelize db:migrate",
     "db:rollback": "sequelize db:migrate:undo:all",
     "db:rollmigrate": "yarn db:rollback && yarn db:migrate && yarn db:seed"
   },
   "keywords": [],
-  "author": "",
+  "author": "fabisch apeli",
   "license": "ISC",
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "body-parser": "^1.19.0",
+    "debug": "^4.1.1",
+    "dotenv": "^8.0.0",
     "express": "^4.17.0",
     "morgan": "^1.9.1",
     "pg": "^7.11.0",
@@ -22,6 +25,9 @@
     "sequelize": "^5.8.6"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/register": "^7.4.4",
     "nodemon": "^1.19.0"
   }
 }
