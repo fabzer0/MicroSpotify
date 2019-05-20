@@ -1,6 +1,6 @@
 import models from '../../server/models';
 
-const { Artist, Album } = models;
+const { Artist, Album, Playlist } = models;
 
 class ArtistsService {
   static async getArtists() {
@@ -15,7 +15,11 @@ class ArtistsService {
         where: { id },
         include: [{
           model: Album,
-          as: 'albums'
+          as: 'albums',
+          include: [{
+            model: Playlist,
+            as: 'songs'
+          }]
         }],
       },
     );

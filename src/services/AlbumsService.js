@@ -1,6 +1,6 @@
 import models from '../../server/models';
 
-const { Album, Playlist } = models;
+const { Album, Playlist, Artist } = models;
 
 class AlbumsService {
   static async getAlbums() {
@@ -13,10 +13,16 @@ class AlbumsService {
     const album = await Album.findOne(
       {
         where: { id },
-        include: [{
-          model: Playlist,
-          as: 'songs'
-        }],
+        include: [
+          {
+            model: Playlist,
+            as: 'songs'
+          },
+          {
+            model: Artist,
+            as: 'owner'
+          }
+        ],
       },
     );
 
