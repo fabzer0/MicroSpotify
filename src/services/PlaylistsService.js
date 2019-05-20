@@ -23,6 +23,16 @@ class PlaylistsService {
 
     return playlist;
   }
+
+  static async getPlaylistByName(musicName) {
+    const { dataValues: { name } } = await Playlist.findOne(
+      {
+        where: { name: musicName }
+      }
+    );
+
+    return name;
+  }
 }
 
 export default PlaylistsService;

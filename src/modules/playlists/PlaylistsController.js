@@ -1,5 +1,8 @@
+
 import PlaylistsService from '../../services/PlaylistsService';
 import HttpResponse from '../../helpers/httpResponses/responseHelper';
+import { createReadStream } from 'fs';
+import path from 'path';
 import HttpError from '../../helpers/httpResponses/errorHandler';
 
 class PlaylistsController {
@@ -18,6 +21,19 @@ class PlaylistsController {
       
       return HttpResponse.sendResponse(res, 200, playlist);
       
+    } catch(e) {
+      console.log(e);
+      return HttpError.sendErrorResponse(res, 500);
+    }
+  }
+
+  static async streamMusicVideo(req, res) {
+    try {
+      const { query: { name } } = req;
+      const musicKeyWords = await PlaylistsService.getPlaylistByName(name);
+      const filePath = `../../assets/videos/${musicKeyWords}.mp4`;
+      res.writeHead(200, { 'Content-Type': 'video/mp4'});
+      createReadStream(path.resolve(__dirname, filePath)).pipe(res);  
     } catch(e) {
       console.log(e);
       return HttpError.sendErrorResponse(res, 500);

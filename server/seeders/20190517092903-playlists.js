@@ -1,31 +1,31 @@
 module.exports = {
   up: queryInterface => queryInterface.bulkInsert('Playlists', [
     {
-      name: 'Chosen',
+      name: 'Safaree\ -\ No\ Regular\ Girl\ \(Ft.\ Jahmiel\)',
       albumId: 1,
       createdAt: '2018-11-14',
       updatedAt: '2018-11-14'
     },
     {
-      name: 'Ye',
+      name: 'A\$AP\ ROCKY\ -\ Fkin\ Problems\ ft.\ Drake\,\ 2\ Chainz\,\ Kendrick\ Lamar',
       albumId: 2,
       createdAt: '2018-11-14',
       updatedAt: '2018-11-14'
     },
     {
-      name: 'I like it',
+      name: 'Rihanna\ -\ Needed\ Me',
       albumId: 3,
       createdAt: '2018-11-14',
       updatedAt: '2018-11-14'
     },
     {
-      name: 'Money',
+      name: 'Selena\ Gomez\ -\ The\ Heart\ Wants\ What\ It\ Wants\ \(Official\ Music\ Video\)',
       albumId: 4,
       createdAt: '2018-11-14',
       updatedAt: '2018-11-14'
     },
     {
-      name: 'Please Me',
+      name: 'YG\ -\ My\ Nigga\ \(Explicit\ Remix\)\ ft.\ Lil\ Wayne\,\ Rich\ Homie\ Quan\,\ Meek\ Mill\,\ Nicki\ Minaj',
       albumId: 5,
       createdAt: '2018-11-14',
       updatedAt: '2018-11-14'
