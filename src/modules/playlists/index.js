@@ -8,4 +8,9 @@ playlistsRouter.get(
   PlaylistsController.getPlaylists
 );
 
+playlistsRouter.get(
+  '/playlist/stream',
+  PlaylistsController.streamMusicVideo
+)
+
 export default playlistsRouter;
