@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     name: {
       allowNull: false,
+      unique: true,
       type: DataTypes.STRING,
     },
     email: {
@@ -16,6 +17,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     country: {
       type: DataTypes.STRING,
+    },
+    imageUrl: {
+      type: DataTypes.TEXT,
     }
   }, {});
   Artist.associate = (models) => {

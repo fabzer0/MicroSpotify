@@ -7,7 +7,8 @@ class ArtistsController {
     const { query: { id } } = req;
     try {
       if(!id) {
-        const artists = await ArtistsService.getArtists();
+        let artists = await ArtistsService.getArtists();
+
         return HttpResponse.sendResponse(res, 200, artists);
       }
 

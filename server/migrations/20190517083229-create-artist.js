@@ -8,6 +8,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
+        unique: true,
         allowNull: false,
         type: Sequelize.STRING,
       },
@@ -17,6 +18,9 @@ module.exports = {
       },
       country: {
         type: Sequelize.STRING,
+      },
+      imageUrl: {
+        type: Sequelize.TEXT,
       },
       createdAt: {
         allowNull: false,
